@@ -28,6 +28,24 @@
                 $this->className
             );
         }
+
+        public function findAllByIdAndTableDep($idDep, $tableDep, $order = NULL){
+            
+
+            $orderQuery = ($order) ?                 
+                "ORDER BY ".$order[0]. " ".$order[1] :
+                "";
+
+            $sql = "SELECT *
+                    FROM ".$this->tableName." a
+                    WHERE a.".$this->tableDep."_id = :id
+                    ".$orderQuery;
+
+                    return $this->getMultipleResults(
+                        DAO::select($sql, ['id' => $idDep]), 
+                        $this->className
+                    );
+        }
        
         public function findOneById($id){
 
