@@ -13,7 +13,7 @@
 			//namespace = Model\Managers, nom de la classe = VehiculeManager
 
 			// on explose notre variable $class par \
-			var_dump(preg_split('#\\\#', $class));
+			
 			$parts = preg_split('#\\\#', $class);
 			//$parts = ['Model', 'Managers', 'VehiculeManager']
 
