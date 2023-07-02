@@ -13,7 +13,7 @@
 
                 if(isset($fieldArray[1]) && $fieldArray[1] == "id"){
                     $manName = ucfirst($fieldArray[0])."Manager";
-                    $FQCName = "Model/Managers/".$manName;
+                    $FQCName = "Model\\Managers\\".$manName;
                     
                     $man = new $FQCName();
                     $value = $man->findOneById($value);
